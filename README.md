@@ -66,8 +66,8 @@ In the following, the step-by-step instructions to run the pipeline and obtain t
 
 ### Embedding Evaluation
 
-  Run the script `main/gsea_based_evaluation_adr_plot.R` and `gsea_based_evaluation_dp_plot.R` to reproduce the figure 1C.
-  Run the script `main/embedding_based_biological_evaluation.R` and `main/embedding_based_biological_evaluation_plot.R` respectively to reproduce the figure 1D.
+  Run the script `main/gsea_based_evaluation_adr_plot.R` and `gsea_based_evaluation_dp_plot.R` to reproduce Figure 1C.
+  Run the script `main/embedding_based_biological_evaluation.R` and `main/embedding_based_biological_evaluation_plot.R` respectively to reproduce Figure 1D.
   
 ### Similarity Analysis
 
@@ -92,7 +92,7 @@ In the following, the step-by-step instructions to run the pipeline and obtain t
 - **Robustness against confounding effects**
   Run the script `main/preprocessing_for_confounding_drug_removal_1.R`, `preprocessing_for_confounding_drug_removal_2` respectively to reproduce analysis related to Robustness against confounding drugs
 
-- **Robustness against drug classes**
+- **Analysis of drug classes**
   Run the script `main/drug_ATC_classes.R` to reproduce analysis related to the enrichment of drug classes in each SOC
 
 
