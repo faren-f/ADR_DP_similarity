@@ -27,11 +27,12 @@ To recreate the Conda environment, run:
 conda env create -f environment.yml
 ```
 
-## Implimentation
 
-In the following, the step-by-step instructions to run the pipeline and obtain the results are described:
+## Implementation
 
-## Knowledge Graph (KG) Construction
+The following section provides step-by-step instructions to run the pipeline and obtain the results described in the paper.
+
+### Knowledge Graph (KG) Construction
 
 - **Homogeneous KG:**  
   Run the script `KG_Construction/GraphConstruction_homo.R` to construct a homogeneous KG for the **Node2Vec** and **GraphConv** models.
@@ -52,27 +53,27 @@ In the following, the step-by-step instructions to run the pipeline and obtain t
 *Hint:* Due to licensing restrictions, we cannot redistribute the drug–protein interaction data derived from DrugBank. Researchers interested in accessing this data can apply for an academic license directly through [DrugBank](https://www.drugbank.ca/).
 
 
-## Main analysis
+### Main analysis
 
-### Graph Representation Leraning
+#### Graph Representation Leraning
 
 - **Node2vec:**  
-  Run the script `main/` to generate embedding using **Node2vec** model.
+  Run the script `main/Node2vec_embedding_generation.ipynb` to generate embedding using **Node2vec** model.
 
 - **GraphConv:**  
-  Run the script `main/` to generate embedding using **GraphConv** model.
+  Run the script `main/GraphConv_embedding_generation.ipynb` to generate embedding using **GraphConv** model.
 
 - **RGCN:**  
-  Run the script `main/` to generate embedding using **RGCN** model.
+  Run the script `main/RGCN_embedding_generation.ipynb` to generate embedding using **RGCN** model.
 
 
 
-### Embedding Evaluation
+#### Embedding Evaluation
 
   Run the script `main/gsea_based_evaluation_adr_plot.R` and `gsea_based_evaluation_dp_plot.R` to reproduce Figure 1C.
   Run the script `main/embedding_based_biological_evaluation.R` and `main/embedding_based_biological_evaluation_plot.R` respectively to reproduce Figure 1D.
   
-### Similarity Analysis
+#### Similarity Analysis
 
 - **Phenotype similarity analysis.** 
   Run the script `main/phenotype_similarity_soc.R` to reproduce p-value of Phenotype similarity analysis for SOC similarities
@@ -90,7 +91,7 @@ In the following, the step-by-step instructions to run the pipeline and obtain t
 - **Number of Nodes**
   Run the script `main/number_of_nodes_associated_with_SOCs.R` to reproduce Figure 2G-I
 
-### Robustness analysis
+#### Robustness analysis
 
 - **Robustness against confounding effects**
   Run the script `main/preprocessing_for_confounding_drug_removal_1.R`, `preprocessing_for_confounding_drug_removal_2` respectively to reproduce analysis related to Robustness against confounding drugs
