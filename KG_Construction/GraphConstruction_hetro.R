@@ -139,10 +139,10 @@ gene_Node[,1] = paste0("entrez.", gene_Node[,1])
 
 
 #####Save data
-write.table(edge_index_ADR_drug, "edge_index_adr_drug.csv", sep = ",")
-write.table(edge_index_DP_disease, "edge_index_dp_disease.csv", sep = ",")
-write.table(edge_index_drug_gene, "edge_index_drug_gene.csv", sep = ",")
-write.table(edge_index_disease_gene, "edge_index_disease_gene.csv", sep = ",")
+write.table(edge_index_ADR_drug, "edge_index_drug_adr.csv", sep = ",")
+write.table(edge_index_DP_disease, "edge_index_disease_dp.csv", sep = ",")
+write.table(edge_index_drug_gene, "edge_index_gene_drug.csv", sep = ",")
+write.table(edge_index_disease_gene, "edge_index_gene_disease.csv", sep = ",")
 write.table(edge_index_PPI, "edge_index_ppi.csv", sep = ",")
 
 write.table(ADR_Node, "adr_node.csv", sep = ",")
