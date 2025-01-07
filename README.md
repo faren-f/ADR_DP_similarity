@@ -3,9 +3,7 @@
 Adverse drug reactions (ADRs) continue to hinder the progress of new therapeutic developments and pose significant risks to patients, despite considerable efforts to mitigate drug safety issues. A major contributing factor to this challenge is our limited understanding of the underlying mechanisms of ADRs. In this study, we explored whether ADRs and diseases phenotypes (DPs) that share similar clinical manifestations also share mechanistic similarities. This dual perspective could facilitate the precise identification of biological pathways involved. To achieve this, we constructed a comprehensive knowledge graph and applied a graph representation learning technique to quantify the mechanistic similarities between phenotypically similar ADRs and DPs. Our analysis reveals substantial mechanistic overlap among ADRs and DPs within specific system organ classes (SOCs), including cardiac, psychiatric, metabolism, and renal disorders. These findings not only enhance our understanding of the molecular mechanisms associated with ADRs by integrating drug-induced and disease-related phenotypes, but also suggest that drugs interacting with proteins associated with specific DPs are more prone to inducing ADRs with similar phenotypic manifestations. This approach advocates for the prioritization of drugs that are less likely to result in ADRs, ultimately contributing to the development of safer and more targeted interventions.
 
 
-## Instructions
-
-### Install packages:
+## Install packages:
 
 In *R*
 ```
@@ -30,7 +28,7 @@ PYG
 
 In the following, the step-by-step instructions to run the pipeline and obtain the results are described:
 
-### Knowledge Graph (KG) Construction
+## Knowledge Graph (KG) Construction
 
 - **Homogeneous KG:**  
   Run the script `KG_Construction/GraphConstruction_homo.R` to construct a homogeneous KG for the **Node2Vec** and **GraphConv** models.
@@ -51,9 +49,9 @@ In the following, the step-by-step instructions to run the pipeline and obtain t
 *Hint:* Due to licensing restrictions, we cannot redistribute the drug–protein interaction data derived from DrugBank. Researchers interested in accessing this data can apply for an academic license directly through [DrugBank](https://www.drugbank.ca/).
 
 
-### Main analysis
+## Main analysis
 
-## Graph Representation Leraning
+### Graph Representation Leraning
 
 - **Node2vec:**  
   Run the script `main/` to generate embedding using **Node2vec** model.
@@ -66,12 +64,12 @@ In the following, the step-by-step instructions to run the pipeline and obtain t
 
 
 
-## Embedding Evaluation
+### Embedding Evaluation
 
-  Run the script `main/gsea_based_evaluation_adr_plot.R` and `gsea_based_evaluation_dp_plot.R` to reproduce the figure 1C.
-  Run the script `main/embedding_based_biological_evaluation.R` and `main/embedding_based_biological_evaluation_plot.R` respectively to reproduce the figure 1D.
+  Run the script `main/gsea_based_evaluation_adr_plot.R` and `gsea_based_evaluation_dp_plot.R` to reproduce Figure 1C.
+  Run the script `main/embedding_based_biological_evaluation.R` and `main/embedding_based_biological_evaluation_plot.R` respectively to reproduce Figure 1D.
   
-## Similarity Analysis
+### Similarity Analysis
 
 - **Phenotype similarity analysis.** 
   Run the script `main/phenotype_similarity_soc.R` to reproduce p-value of Phenotype similarity analysis for SOC similarities
@@ -89,12 +87,12 @@ In the following, the step-by-step instructions to run the pipeline and obtain t
 - **Number of Nodes**
   Run the script `main/number_of_nodes_associated_with_SOCs.R` to reproduce Figure 2G-I
 
-## Robustness analysis
+### Robustness analysis
 
 - **Robustness against confounding effects**
   Run the script `main/preprocessing_for_confounding_drug_removal_1.R`, `preprocessing_for_confounding_drug_removal_2` respectively to reproduce analysis related to Robustness against confounding drugs
 
-- **Robustness against drug classes**
+- **Analysis of drug classes**
   Run the script `main/drug_ATC_classes.R` to reproduce analysis related to the enrichment of drug classes in each SOC
 
 
