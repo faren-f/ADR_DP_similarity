@@ -18,13 +18,11 @@ ReactomePA(1.46.0)
 ```
 In *Python*
 
-```
-pandas
-numpy
-torch
-PYG
+To recreate the Conda environment:
 
-```
+```bash
+conda env create -f environment.yml
+
 
 In the following, the step-by-step instructions to run the pipeline and obtain the results are described:
 
