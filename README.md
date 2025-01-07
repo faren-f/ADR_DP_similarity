@@ -6,26 +6,28 @@ Adverse drug reactions (ADRs) remain a significant challenge in drug development
 ## Main Findings
 We constructed a comprehensive knowledge graph (KG) and applied graph representation learning techniques to quantify the mechanistic similarities between ADRs and DPs. Our analysis revealed substantial mechanistic overlaps within specific system organ classes (SOCs), including cardiac, psychiatric, metabolic, and renal disorders. This approach advocates for the prioritization of drugs that are less likely to result in ADRs, ultimately contributing to the development of safer and more targeted interventions.
 
-## Install packages:
 
-In *R*
+## Installation
+
+### In *R*  
+Install the following packages with the specified versions to ensure compatibility:  
+```r
+install.packages("igraph", version = "2.0.3")
+install.packages("ggplot2", version = "3.5.1")
+install.packages("fgsea", version = "1.28.0")
+install.packages("clusterProfiler", version = "4.10.1")
+install.packages("org.Hs.eg.db", version = "3.18.0")
+install.packages("biomaRt", version = "2.58.2")
+install.packages("ReactomePA", version = "1.46.0")
 ```
-igraph(2.0.3)
-ggplot2(3.5.1)
-fgsea(1.28.0)
-clusterProfiler(4.10.1)
-org.Hs.eg.db(3.18.0)
-biomaRt(2.58.2)
-ReactomePA(1.46.0)
-
-```
-In *Python*
-
-To recreate the Conda environment:
+### In *Python* 
+To recreate the Conda environment, run:
 
 ```bash
 conda env create -f environment.yml
+```
 
+## Implimentation
 
 In the following, the step-by-step instructions to run the pipeline and obtain the results are described:
 
