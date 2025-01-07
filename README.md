@@ -58,14 +58,20 @@ The following section provides step-by-step instructions to run the pipeline and
 #### Graph Representation Leraning
 
 - **Node2vec:**  
-  Run the script `main/Node2vec_embedding_generation.ipynb` to generate embedding using **Node2vec** model.
+  Run the script `main/Node2vec_embedding_generation.ipynb` to generate 1000 embeddings using **Node2vec** model.
+  Run the script `main/rankmean_1000_emb_node2vec.ipynb` to obtain the cosine similarity and rankmean of 1000 embeddings for different node pairs.
+
 
 - **GraphConv:**  
-  Run the script `main/GraphConv_embedding_generation.ipynb` to generate embedding using **GraphConv** model.
+  Run the script `main/GraphConv_embedding_generation.ipynb` to generate 1000 embedding using **GraphConv** model.
+  Run the script `main/rankmean_1000_emb_GraphConv.ipynb` to obtain the cosine similarity and rankmean of 1000 embeddings for different node pairs.
 
 - **RGCN:**  
-  Run the script `main/RGCN_embedding_generation.ipynb` to generate embedding using **RGCN** model.
+  Run the script `main/RGCN_embedding_generation.ipynb` to generate 1000 embedding using **RGCN** model.
+  Run the script `main/rankmean_1000_emb_RGCN.ipynb` to obtain the cosine similarity and rankmean of 1000 embeddings for different node pairs.
 
+#### link prediction comparison
+  Run the script `main/LP_comparison.ipynb` to compare the link prediction results of three **Node2vec**, **GraphConv**, and **RGCN** models.
 
 
 #### Embedding Evaluation
