@@ -52,7 +52,7 @@ The following section provides step-by-step instructions to run the pipeline and
   - **KG combined with CTD:**  
   Run the script `KG_Construction/GraphConstruction_CTD.R` to combine disease-genes in CTD with the KG.
 
-- **KG combined with DrugBank:2022v:**  
+- **KG combined with DrugBank-2022v:**  
   Run the script `KG_Construction/GraphConstruction_DrugBank2022v.R` to combine drug-target links from DrugBank with the version of 2022.
 
 - **KG combined with PT:**  
