@@ -191,6 +191,3 @@ write.table(edge_index_homo, "edge_index_homogenious_PT.csv", sep = ",")
 write.table(Conversion_table, "conversion_table_homogenious_PT.csv", sep = ",")
 
 
-
-
-
