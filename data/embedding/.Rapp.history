@@ -1,0 +1,1 @@
+load("/Users/faren/Documents/My_Repositories/ADR_DP_similarity/data/embedding/drug_target_db.rds")
