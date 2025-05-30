@@ -1,10 +1,37 @@
 rm(list=ls())
 
 setwd("../data/")
+protein_gene = readRDS("protein_gene.rds")
 drug_se = readRDS("drug_adr.rds")
-drug_target = readRDS("drug_target.rds")
 disease_symptom = readRDS("disease_dp.rds")
 disease_gene_protein = readRDS("disease_gene_CTD.rds")
+drug_target = read.csv("uniprot links_2022_01_04.csv") # receive data from drugbank 
+drug_target = drug_target[,c(1,4)]
+
+drug_target$DrugBank.ID = paste0("drugbank.", drug_target$DrugBank.ID)
+drug_target$UniProt.ID = paste0("uniprot.", drug_target$UniProt.ID)
+colnames(drug_target) = c("drugbank_id", "uniprot_id_drug")
+
+protein_gene = TargetProtein_Gene_Unique(protein_gene, drug_target)
+drug_target = merge(protein_gene, drug_target, by.x = "uniprot_id", by.y = "uniprot_id_drug")
+drug_target = drug_target[, c(3,2,1)]
+drug_target$entrez_id = gsub("entrez.","", drug_target$entrez_id)
+colnames(drug_target) = c("drugbank_id", "entrez_id_drug", "uniprop_id_drug")
+
+########
+dis_merge = merge(disease_gene_protein, disease_symptom, by = "mondo_id")
+dr_dis_merge = merge(dis_merge, drug_se, by.x = "meddra_id")
+dr_dis_merge_all = merge(dr_dis_merge, drug_target, by.x = "drugbank_id")
+
+######### Decompose all the edges
+drug_se = unique(dr_dis_merge_all[,c(1,2,10,11)])
+drug_target = unique(dr_dis_merge_all[,c(1,12,13)])
+disease_symptom = unique(dr_dis_merge_all[,c(3,7,2,8,9)])
+colnames(disease_symptom)[5] = "disease_name"
+disease_gene_protein = unique(dr_dis_merge_all[,c(3,4,5,6)])
+colnames(disease_gene_protein)[3] = "disease_name"
+
+################
 
 dis_merge = merge(disease_gene_protein, disease_symptom, by = "mondo_id")
 dr_dis_merge = merge(dis_merge, drug_se, by.x = "meddra_id")
@@ -197,11 +224,8 @@ Conversion_table = rbind(ADR_Node, DP_Node, Drug_Node, Disease_Node, gene_Node)
 colnames(Conversion_table) = c("Names", "Nodes", "Symbole")
 
 #####Save data
-write.table(edge_index_homo, "edge_index_homogenious_CTD.csv", sep = ",")
-write.table(Conversion_table, "conversion_table_homogenious_CTD.csv", sep = ",")
-
-
-
+write.table(edge_index_homo, "edge_index_homogenious_DB2022.csv", sep = ",")
+write.table(Conversion_table, "conversion_table_homogenious_DB2022.csv", sep = ",")
 
 
 
