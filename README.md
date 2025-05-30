@@ -48,6 +48,9 @@ The following section provides step-by-step instructions to run the pipeline and
 
 - **KG with Removed Confounding Drugs:**  
   Run the script `KG_Construction/GraphConstruction_confounderRemoval.R` to construct a KG after removing confounding drugs.
+  
+  - **KG combined with CTD:**  
+  Run the script `KG_Construction/GraphConstruction_CTD.R` to combine disease-genes in CTD with the KG.
 
 
 *Hint:* Due to licensing restrictions, we cannot redistribute the drug–protein interaction data derived from DrugBank. Researchers interested in accessing this data can apply for an academic license directly through [DrugBank](https://www.drugbank.ca/).
