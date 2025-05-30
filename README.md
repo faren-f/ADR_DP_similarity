@@ -52,6 +52,12 @@ The following section provides step-by-step instructions to run the pipeline and
   - **KG combined with CTD:**  
   Run the script `KG_Construction/GraphConstruction_CTD.R` to combine disease-genes in CTD with the KG.
 
+- **KG combined with DrugBank:2022v:**  
+  Run the script `KG_Construction/GraphConstruction_DrugBank2022v.R` to combine drug-target links from DrugBank with the version of 2022.
+
+- **KG combined with PT:**  
+  Run the script `KG_Construction/GraphConstruction_PT.R` to construct the KG with the new representation of preferred terms (PTs) instead of Low-level terms(LLTs).
+
 
 *Hint:* Due to licensing restrictions, we cannot redistribute the drug–protein interaction data derived from DrugBank. Researchers interested in accessing this data can apply for an academic license directly through [DrugBank](https://www.drugbank.ca/).
 
